@@ -1,0 +1,134 @@
+article.tabs {
+  /*position: fixed;*/
+  display: block;
+  width: 40em;
+  height: 15em;
+  margin: 2em auto;
+  top: 30px;
+  left: 50px;
+}
+
+article.tabs section {
+  position: absolute;
+  display: block;
+  top: 1.8em;
+  left: 0;
+  /*  height: 12em;*/
+  /* padding: 10px 20px;*/
+  /*  background-color: #aaa;*/
+  /* border-radius: 5px;*/
+  /* box-shadow: 1em 0.5em;*/
+  /*inset 0.3em 0.3em 0.9em black;*/
+  /*1em 0.5em;*/
+  /*0 3px 3px rgba(0,0,0,0.1);*/
+  z-index: 0;
+}
+
+article.tabs .ag-tool-panel-container {
+  position: absolute;
+  margin: 0 5px;
+  height: 750px !important;
+}
+
+#helper-bar {
+  position: relative;
+  font-size: 1em;
+  font-weight: normal;
+  /* width: 80%;*/
+  /*  height: 1.8em;*/
+  top: 1.2em;
+  left: 30px;
+  right: 30px;
+  padding: 0;
+  margin: 0;
+  /*  color: #999;
+  background-color: #ddd;*/
+  /*left:550px;*/
+}
+
+
+/*article.tabs section:first-child {
+  /*  z-index: 1;
+}*/
+
+
+/*.tab-jump {
+  display: block;
+  top: 0;
+  left: 0;
+  position: fixed;
+}*/
+
+article.tabs section h2 {
+  position: absolute;
+  font-size: 1em;
+  font-weight: normal;
+  width: 120px;
+  height: 1.8em;
+  top: -1.8em;
+  left: 10px;
+  padding: 0;
+  margin: 0;
+  color: #2E4053;
+  /*#999;*/
+  background-color: #ddd;
+  /*#ddd;*/
+  border-radius: 5px 5px 0 0;
+}
+
+article.tabs section:nth-child(2) h2 {
+  left: 132px;
+}
+
+article.tabs section:nth-child(3) h2 {
+  left: 254px;
+}
+
+article.tabs section:nth-child(4) h2 {
+  left: 376px;
+}
+
+article.tabs section:nth-child(5) h2 {
+  left: 498px;
+}
+
+article.tabs section:nth-child(6) h2 {
+  left: 626px;
+}
+
+article.tabs section:nth-child(7) h2 {
+  left: 748px;
+}
+
+article.tabs section:nth-child(8) h2 {
+  left: 870px;
+}
+
+article.tabs section:nth-child(9) h2 {
+  left: 992px;
+}
+
+article.tabs section h2 a {
+  display: block;
+  width: 100%;
+  line-height: 1.8em;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  outline: 0 none;
+}
+
+article.tabs section:target,
+article.tabs section:target h2 {
+  color: #333;
+  background-color: #f5f5f5;
+  z-index: 2;
+}
+
+article.tabs section:target div {
+  opacity: 1;
+}
+
+article.tabs section div {
+  opacity: 0;
+}

@@ -1,0 +1,1 @@
+angular.module("monitor").service('$', function() { return $; });

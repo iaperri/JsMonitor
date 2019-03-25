@@ -1,0 +1,101 @@
+.grid {
+  border: 1px solid rgb(212, 212, 212);
+  width: 80%;
+  height: 800px;
+}
+
+.bottom-border {
+  border-bottom: 1px solid #C8C8C8;
+}
+
+.element-container {
+  padding: 20px 15px;
+}
+
+.separatorLeft {
+  float: left;
+}
+
+.alignTextV {
+  vertical-align: text-top;
+}
+
+.smallMarginRight {
+  margin-right: 70px;
+  padding: 5px;
+}
+
+.marginRight {
+  margin-right: 230px;
+  padding: 5px;
+}
+
+.floatClear {
+  clear: both;
+}
+
+.ag-blue .ag-header-cell {
+  /*border-bottom: 1px solid #d3d3d3;*/
+  font: 7pt Verdana, Geneva, sans-serif;
+}
+
+.ag-blue .ag-cell {
+  /*border-bottom: 1px solid #d3d3d3;*/
+  font: 9pt Verdana, Geneva, sans-serif;
+}
+
+.ag-row:hover .ag-cell {
+  background: white
+}
+
+
+/*.ui-grid-row:nth-child(even):hover .ui-grid-cell{background:red}*/
+
+.center-text {
+  text-align: center;
+}
+
+
+/*.ag-row-selected
+{
+	background-color: #c7c7c7; !important
+}*/
+
+input[type=checkbox] {
+  margin: 0 4px 0 0;
+  !important;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+
+
+/** selected colors */
+
+.ag-blue .red {
+  background-color: #FA8092;
+}
+
+.ag-blue .orange {
+  background-color: #E6A646;
+}
+
+.ag-blue .green {
+  background-color: #14C895;
+  /*#BEEEEF;*/
+}
+
+.ag-blue .pink {
+  background-color: #F59EE7;
+}
+
+.ag-blue .amber {
+  background-color: #FFC200;
+}
+
+.ag-blue .ag-row-selected {
+  background-color: #c7c7c7;
+}
+
+.align-center {
+  text-align: center;
+}

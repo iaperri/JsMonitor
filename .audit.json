@@ -1,0 +1,59 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 10
+    },
+    "auditLog": "./.audit.json",
+    "files": [
+        {
+            "date": 1553535605546,
+            "name": "node.log.2019-03-25",
+            "hash": "7e5199328de8fa7569d2574e01f190f1"
+        },
+        {
+            "date": 1553536137332,
+            "name": "node.log.2019-03-25",
+            "hash": "cc5218b904dd1f8ad44c66a29d31c6d2"
+        },
+        {
+            "date": 1553536773162,
+            "name": "node.log.2019-03-25",
+            "hash": "61c4261cd9430e158e9a3d445cdbc969"
+        },
+        {
+            "date": 1553539398675,
+            "name": "node.log.2019-03-25",
+            "hash": "cae023bb2fdaf932c98b0754befd8763"
+        },
+        {
+            "date": 1553540760743,
+            "name": "node.log.2019-03-25",
+            "hash": "85b1686e675ddf1840c66d6ce2c5457d"
+        },
+        {
+            "date": 1553541951452,
+            "name": "node.log.2019-03-25",
+            "hash": "d6cee997c450567a16cf5558837edc6b"
+        },
+        {
+            "date": 1553542388534,
+            "name": "node.log.2019-03-25",
+            "hash": "2ba88ca9be8a423f10a080a89550d9de"
+        },
+        {
+            "date": 1553542871921,
+            "name": "node.log.2019-03-25",
+            "hash": "c438cc8a2c49edb8e0a4f8bc774050cf"
+        },
+        {
+            "date": 1553543010438,
+            "name": "node.log.2019-03-25",
+            "hash": "3ba5181fd13617befe1503d59d6c644c"
+        },
+        {
+            "date": 1553543855578,
+            "name": "node.log.2019-03-25",
+            "hash": "6a6a5b3db795159572f368bcf6b4eae2"
+        }
+    ]
+}

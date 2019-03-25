@@ -1,0 +1,95 @@
+doctype html
+html(ng-app="monitor")
+  head
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" >
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='./node_modules/ag-grid/dist/styles/ag-grid.css')
+    link(rel='stylesheet', href='./node_modules/ag-grid/dist/styles/theme-blue.css')
+    link(rel='stylesheet', href='./css/datepicker.css')
+    script(src='./dist/jquery.min.js')
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    script(src='./dist/bootstrap.min.js')
+    //- script(scr='./dist/angular.js')
+    //- script(scr='./dist/angular-cookies.js')
+    script(src='./node_modules/angular/angular.js')
+    script(src='./node_modules/angular-cookies/angular-cookies.js')
+    //- script(src="https://code.angularjs.org/1.5.9/angular.js" data-semver="1.5.9")
+    //- script(src="https://code.angularjs.org/1.5.9/angular-cookies.js" data-semver="1.5.9")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js")
+    script(src='./node_modules/ag-grid/dist/ag-grid.js')
+
+    link(rel='stylesheet', href='./css/artTabs.css')
+    link(rel='stylesheet', href='./css/main.css')
+    link(rel="icon" href="data:;base64,iVBORw0KGgo=")
+    link(rel="icon" href="data:;base64,=")
+    script(src="./lib/app.js")
+    script(src="./lib/monitorGrid.js")
+    script(src="./lib/socialiteGrid.js")
+    script(src="./lib/socialiteTabGrid.js")
+    script(src="./lib/scalaGrid.js")
+    script(src="./lib/scalaTabGrid.js")
+
+
+    script(src='./node_modules/angular-modal-service/dst/angular-modal-service.min.js')
+    script(src='./node_modules/angular-clipboard/angular-clipboard.js')
+    script(src='./services/unitsservice.js')
+    script(src='./services/notesservice.js')
+    script(src='./services/prompt/notes.js')
+    script(src='./services/hoursservice.js')
+    script(src='./services/prompt/hours.js')
+    script(src='./services/popupservice.js')
+    script(src='./services/prompt/popup.js')
+    //- script(src='./directives/test.js')
+    script(src='./services/userTabService.js')
+    script(src='./services/jqueryAsAService.js')
+    script(src='./utils/ExtraColumns.js')
+    
+    script.
+      $(document).ready(function() {
+        $('a').click(function (e) {
+          var x = window.pageXOffset,
+              y = window.pageYOffset;
+          $(window).one('scroll', function () {
+              window.scrollTo(x, y);
+          })
+        });
+      });
+
+  body(style="position: absolute; height: 80%;  width: 100%;" )
+    div(ng-controller='MainCtrl')
+      div(class='container-fluid')
+        div(id='helper-bar')
+          div(class='row')
+            div(class='col-lg-2')
+             
+            div(class='col-lg-1')
+             <strong>{{ rowsAfterFilter }} units</strong>
+            div(class='col-lg-2')
+                <input type='text' ng-model='filterValue' ng-change="onFilterChanged()" />
+            //- div(class='col-lg-1')
+            //-     <input type='text' ng-model='unitFjavailterValue' ng-change="onUnitFilterChanged()" />
+            div(class='col-lg-5' ng-if="hoursPresent")
+              <input name='showAllCheck' type='checkbox' ng-model="hideClosed.value" ng-true-value="true" ng-false-value="false" ng-click='showHideClosed()'>
+              | Hide Closed Venues
+            div(class='col-lg-1 pull-right')
+              button.btn.btn-default(
+                type='button'
+                ng-click='export()'
+              )
+                | Export
+            //- div(test)
+            div(class='col-lg-1 pull-right')
+              button.btn.btn-default(
+                type='button'
+                ng-click='togglePanel()'
+              )
+                | Tool Panel
+          div(class="row")
+            div(class='col-xs-6 .col-md-4')
+            div(class='col-xs-12 col-md-8')
+              article(class="tabs")
+                  each tab, i in tabsA
+                    section(id="#{tab.id}")
+                      h2 <a ng-click="changeTab('#{tab.id}')" href="&#35;#{tab.id}">#{tab.name}</a>
+                      div(id="gridOptions#{tab.id}" class="ag-blue" style="height: 750px;{{resolution}}")
+             div(class='col-md-2')

@@ -1,0 +1,127 @@
+
+
+Fri Oct 21 15:35:13 2016
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 4.7.4-1-ARCH (#1 SMP PREEMPT Thu Sep 15 15:24:29 CEST 2016) x86_64
+Compiler: GCC 5.3
+Compilation date: 2016-03-21T14:32:26
+ext2fs lib: 1.43.3, ntfs lib: libntfs-3g, reiserfs lib: 0.3.0.5, ewf lib: none, curses lib: ncurses 6.0
+/dev/sda: LBA, LBA48, DCO support
+/dev/sda: size       976773168 sectors
+/dev/sda: user_max   976773168 sectors
+/dev/sdb: LBA, HPA, LBA48 support
+/dev/sdb: size       500118192 sectors
+/dev/sdb: user_max   500118192 sectors
+/dev/sdb: native_max 500118192 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 500 GB / 465 GiB - CHS 60801 255 63, sector size=512 - ST500DM002-1BD142, S/N:Z3TNJAFG, FW:HP73
+Disk /dev/sdb - 256 GB / 238 GiB - CHS 31130 255 63, sector size=512 - TS256GSSD370, S/N:B841532401, FW:N1114H
+
+Partition table type (auto): Intel
+Disk /dev/sda - 500 GB / 465 GiB - ST500DM002-1BD142
+Partition table type: Intel
+
+Analyse Disk /dev/sda - 500 GB / 465 GiB - CHS 60801 255 63
+Geometry from i386 MBR: head=255 sector=63
+NTFS at 0/32/33
+NTFS at 12/223/20
+check_part_i386 4 type 27: no test
+Current partition structure:
+ 1 * HPFS - NTFS              0  32 33    12 223 19     204800
+ 2 P HPFS - NTFS             12 223 20 31411 248  5  504426496
+ 3 E extended             31411 248  6 60788  79 27  471930880
+ 4 P Windows RE(store)    60788  79 28 60801  47 46     206848
+ 5 L Linux                31412  25 38 35328  89 25   62914560
+   X extended             35328  89 26 53863  58 19  297762816
+ 6 L Linux                35328 121 58 53863  58 19  297760768
+
+search_part()
+Disk /dev/sda - 500 GB / 465 GiB - CHS 60801 255 63
+NTFS at 0/32/33
+filesystem size           204800
+sectors_per_cluster       8
+mft_lcn                   8533
+mftmirr_lcn               2
+clusters_per_mft_record   -10
+clusters_per_index_record 1
+     HPFS - NTFS              0  32 33    12 223 19     204800
+     NTFS, blocksize=4096, 104 MB / 100 MiB
+NTFS at 12/223/20
+filesystem size           504426496
+sectors_per_cluster       8
+mft_lcn                   786432
+mftmirr_lcn               2
+clusters_per_mft_record   -10
+clusters_per_index_record 1
+     HPFS - NTFS             12 223 20 31411 248  5  504426496
+     NTFS, blocksize=4096, 258 GB / 240 GiB
+
+recover_EXT2: s_block_group_nr=0/240, s_mnt_count=34/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7864320
+recover_EXT2: part_size 62914560
+     Linux                31412  25 38 35328  89 25   62914560
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 32 GB / 30 GiB
+
+recover_EXT2: s_block_group_nr=0/1135, s_mnt_count=34/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 37220096
+recover_EXT2: part_size 297760768
+     Linux                35328 121 58 53863  58 19  297760768
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 152 GB / 141 GiB
+FAT32 at 60788/79/28
+FAT1 : 6638-7414
+FAT2 : 7415-8191
+start_rootdir : 8192 root cluster : 2
+Data : 8192-206847
+sectors : 206848
+cluster_size : 2
+no_of_cluster : 99328 (2 - 99329)
+fat_length 777 calculated 777
+
+FAT32 at 60788/79/28
+     FAT32 LBA            60788  79 28 60801  47 46     206848 [HP_TOOLS]
+     FAT32, blocksize=1024, 105 MB / 101 MiB
+Search for partition aborted
+
+Results
+   * HPFS - NTFS              0  32 33    12 223 19     204800
+     NTFS, blocksize=4096, 104 MB / 100 MiB
+   P HPFS - NTFS             12 223 20 31411 248  5  504426496
+     NTFS, blocksize=4096, 258 GB / 240 GiB
+   P Linux                31412  25 38 35328  89 25   62914560
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 32 GB / 30 GiB
+   L Linux                35328 121 58 53863  58 19  297760768
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 152 GB / 141 GiB
+   L FAT32 LBA            60788  79 28 60801  47 46     206848 [HP_TOOLS]
+     FAT32, blocksize=1024, 105 MB / 101 MiB
+
+Hint for advanced users. dmsetup may be used if you prefer to avoid to rewrite the partition table for the moment:
+echo "0 204800 linear /dev/sda 2048" | dmsetup create test0
+echo "0 504426496 linear /dev/sda 206848" | dmsetup create test1
+echo "0 62914560 linear /dev/sda 504635392" | dmsetup create test2
+echo "0 297760768 linear /dev/sda 567552000" | dmsetup create test3
+echo "0 206848 linear /dev/sda 976564224" | dmsetup create test4
+add_ext_part_i386: max
+add_ext_part_i386: max
+
+interface_write()
+ 1 * HPFS - NTFS              0  32 33    12 223 19     204800
+ 2 P HPFS - NTFS             12 223 20 31411 248  5  504426496
+ 3 P Linux                31412  25 38 35328  89 25   62914560
+ 4 E extended LBA         35328  89 26 60801  80 15  409223168
+ 5 L Linux                35328 121 58 53863  58 19  297760768
+ 6 L FAT32 LBA            60788  79 28 60801  47 46     206848 [HP_TOOLS]
+simulate write!
+
+write_mbr_i386: starting...
+write_all_log_i386: starting...
+write_all_log_i386: CHS: 35328/89/26,lba=567549952
+write_all_log_i386: CHS: 60788/78/1,lba=976564134
+
+TestDisk exited normally.
